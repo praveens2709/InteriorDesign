@@ -1,0 +1,22 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Hanken Grotesk';
+  src: url('./assets/fonts/hanken-grotesk-v8-latin-regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html, body {
+  font-family: 'Hanken Grotesk', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  color: #333;
+}

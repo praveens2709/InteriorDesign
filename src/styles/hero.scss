@@ -1,0 +1,173 @@
+@use "../styles/variables" as vars;
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    background: vars.$bg-hero;
+    color: vars.$color-white;
+    background-attachment: fixed;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg,
+                rgba(25, 35, 36, 0) 0%,
+                rgba(25, 35, 36, 0.4) 80.94%);
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .hero-content {
+        position: relative;
+        width: 84%;
+        padding: 150px 0 280px 0;
+        z-index: 2;
+
+        @media (max-width: 1024px) {
+            width: 90%;
+            padding: 100px 0 200px 0;
+        }
+
+        @media (max-width: 768px) {
+            width: 100%;
+            padding: 60px 0 120px 0;
+        }
+    }
+
+    .subtitle {
+        font-family: vars.$font-primary;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.6em;
+    }
+
+    .title {
+        font-family: vars.$font-primary;
+        font-size: 75px;
+        font-weight: 700;
+        line-height: 1.1em;
+        letter-spacing: -0.02em;
+
+        @media (max-width: 1024px) {
+            font-size: 60px;
+        }
+
+        @media (max-width: 768px) {
+            font-size: 32px;
+        }
+    }
+
+    .description {
+        width: 65%;
+        font-family: vars.$font-primary;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 1.7em;
+
+        @media (max-width: 1024px) {
+            width: 80%;
+        }
+
+        @media (max-width: 768px) {
+            width: 100%;
+            font-size: 16px;
+        }
+    }
+
+    .buttons {
+        display: flex;
+        gap: 1rem;
+
+        .btn-1,
+        .btn-2 {
+            position: relative;
+            overflow: hidden;
+            font-family: vars.$font-primary;
+            font-size: 16px;
+            font-weight: 500;
+            border: none;
+            transition: color 0.3s ease;
+            padding: vars.$btn-padding;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            z-index: 1;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: -220%;
+                width: 200%;
+                height: 200%;
+                background-color: vars.$color-secondary;
+                transform: skew(45deg);
+                z-index: -1;
+                transition: left 0.4s ease;
+            }
+
+            &:hover::after {
+                left: 0;
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        .btn-1 {
+            background-color: vars.$color-primary;
+            color: vars.$color-white;
+
+            &:hover {
+                color: vars.$color-white;
+            }
+        }
+
+        .btn-2 {
+            background-color: vars.$color-white;
+            color: vars.$color-primary;
+
+            &::after {
+                background-color: vars.$color-primary;
+            }
+
+            &:hover {
+                color: vars.$color-white;
+            }
+        }
+        
+    }
+
+    @media (max-width: vars.$breakpoint-mobile) {
+        .hero-content {
+            padding: 20px;
+            width: 100%;
+        }
+
+        .title {
+            font-size: 32px;
+            width: 100%;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            width: 100%;
+        }
+
+        .description {
+            font-size: 16px;
+            width: 100%;
+        }
+
+        .buttons {
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+}

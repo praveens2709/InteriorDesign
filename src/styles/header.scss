@@ -1,0 +1,98 @@
+@use '../styles/variables' as vars;
+
+.header {
+  padding-top: 3.3rem;
+
+  .logo {
+    width: 120px;
+    bottom: 0;
+  }
+
+  .navbar {
+    background: vars.$bg-header;
+    border-bottom: 1px solid #ffffff1a;
+
+    .navbar-nav {
+      display: flex;
+      gap: 10px;
+    }
+
+    .nav-link {
+      font-family: vars.$font-primary;
+      font-size: 16px;
+      color: vars.$color-primary;
+      cursor: pointer;
+      text-transform: uppercase;
+
+      &:hover {
+        color: vars.$hover-color-primary;
+      }
+
+      &.active {
+        color: vars.$hover-color-primary;
+      }
+    }
+
+    .navbar-toggler {
+      border: none;
+      background-color: vars.$color-primary;
+      padding: 5px 10px 10px 10px;
+      border-radius: 0;
+
+      .navbar-toggler-icon {
+        width: 1em;
+        height: 0.8em;
+      }
+    }
+
+    .navbar-collapse {
+      flex-grow: 0;
+    }
+  }
+}
+
+/* For responsive design */
+@media (max-width: 991px) {
+  .header {
+    padding-top: 2.3rem;
+
+    .logo {
+      width: 90px;
+    }
+  }
+
+  .navbar-collapse {
+    background: vars.$bg-header;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 20px;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 999;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-link {
+    font-size: 18px;
+    color: vars.$color-white;
+  }
+
+  .navbar-toggler.collapsed {
+    background-color: vars.$color-primary;
+  }
+
+  .navbar-toggler:not(.collapsed) {
+    background-color: vars.$bg-header;
+
+    .navbar-toggler-icon {
+      background-color: vars.$color-primary;
+    }
+  }
+}

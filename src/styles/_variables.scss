@@ -1,10 +1,27 @@
 $font-primary: 'Hanken Grotesk', sans-serif;
+$font-secondary: 'La Belle Aurore', cursive;
+
 $color-white: #ffffff;
 $color-black: #000000;
 $color-primary: #9D7049;
 $color-secondary: #553105;
 $hover-color-primary: #775435;
 $bg-header: #f6f2ee;
+$bg-body: #F8F8F8;
+$bg-icon: #dec5b0;
 $bg-hero: url('../assets/images/hero6.jpg') no-repeat center center/cover;
 $btn-padding: 15px 25px;
+
+// Breakpoints
 $breakpoint-mobile: 767px;
+$breakpoint-tablet: 1024px;
+
+:root {
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-primary: #9D7049;
+    --color-secondary: #553105;
+    --hover-color-primary: #775435;
+    --bg-header: #f6f2ee;
+    --bg-icon: #dec5b0;
+}

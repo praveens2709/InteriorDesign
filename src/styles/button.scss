@@ -1,0 +1,63 @@
+@use "./variables" as vars;
+
+.custom-btn {
+  position: relative;
+  overflow: hidden;
+  font-family: vars.$font-primary;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  transition: color 0.3s ease;
+  padding: vars.$btn-padding;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 1;
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -220%;
+    width: 200%;
+    height: 200%;
+    transform: skew(45deg);
+    z-index: -1;
+    transition: left 0.4s ease;
+  }
+
+  &:hover::after {
+    left: 0;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &.primary {
+    background-color: vars.$color-primary;
+    color: vars.$color-white;
+
+    &::after {
+      background-color: vars.$color-secondary;
+    }
+
+    &:hover {
+      color: vars.$color-white;
+    }
+  }
+
+  &.secondary {
+    background-color: vars.$color-white;
+    color: vars.$color-primary;
+
+    &::after {
+      background-color: vars.$color-primary;
+    }
+
+    &:hover {
+      color: vars.$color-white;
+    }
+  }
+}

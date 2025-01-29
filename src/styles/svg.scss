@@ -1,0 +1,37 @@
+@use "../styles/variables" as vars;
+
+.subtitle-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  &.white {
+    .subtitle {
+      color: vars.$color-white;
+    }
+    .subtitle-icon {
+      fill: vars.$color-white;
+    }
+  }
+
+  &.primary {
+    .subtitle {
+      color: vars.$color-primary;
+    }
+    .subtitle-icon {
+      fill: vars.$color-primary;
+    }
+  }
+
+  .subtitle {
+    font-family: vars.$font-primary;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.6em;
+  }
+
+  .subtitle-icon {
+    width: 27px;
+    height: 6px;
+  }
+}

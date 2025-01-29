@@ -1,0 +1,29 @@
+@use "./variables" as vars;
+
+@mixin responsive-font($small, $medium, $large) {
+    font-size: $large;
+  
+    @media (max-width: 1024px) {
+      font-size: $medium;
+    }
+  
+    @media (max-width: 768px) {
+      font-size: $small;
+    }
+  }
+
+  @mixin section-title {
+    font-family: vars.$font-primary;
+    font-weight: 700;
+    line-height: 1.1em;
+    letter-spacing: -0.02em;
+    margin-bottom: 0;
+    font-size: clamp(26px, 3vw, 45px);
+  }
+  
+  @mixin section-description {
+    font-family: vars.$font-primary;
+    font-weight: 600;
+    line-height: 1.7em;
+    font-size: clamp(14px, 2vw, 18px);
+  }
